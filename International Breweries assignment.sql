@@ -1,3 +1,5 @@
+/* Created Tables for international breweries and exported the CSV files*/
+
 CREATE TABLE breweries (
 	  SALES_ID INT,
 	  SALES_REP VARCHAR,
@@ -14,7 +16,6 @@ CREATE TABLE breweries (
 	  YEARS INT
 );
 
-SELECT * FROM breweries
 
 /*Write an SQL query to fetch “SALES_REP” from breweries  table using the alias name as WORKER_NAME.*/
 SELECT sales_rep AS WORKER_NAME
@@ -39,7 +40,8 @@ months IN ('January', 'February', 'March') AND years = 2019
 GROUP BY brands;
 
 /* Write a query that reduces the cost of the trophy brand by 2% */
-SELECT 0.98*COSTS AS reduced_costs FROM breweries
+SELECT 0.98*COSTS AS reduced_costs 
+FROM breweries
 WHERE brands = 'trophy';
 
 /* Which sales rep made the highest profit in Ghana in the year 2017? */
@@ -51,8 +53,8 @@ LIMIT 1;
 
 /* What region recorded the lowest quantity of goods in the last quarter of every year?*/
 SELECT region, 
-		MIN(quantity) AS quantity_of_goods,
-		years
+	MIN(quantity) AS quantity_of_goods,
+	years
 FROM breweries
 WHERE months IN ('October', 'November', 'December')
 GROUP BY region, years
@@ -61,7 +63,7 @@ ORDER BY MIN(quantity) ASC;
 /* The Breweries company has a yearly tradition of promoting the sales_rep who makes the highest 
 profit in the year. Who deserves this promotion in 2019? */
 SELECT sales_rep, 
-		years
+	years
 FROM breweries
 WHERE years = 2019
 ORDER BY profit DESC
@@ -70,7 +72,7 @@ LIMIT 1;
 /*Regions with quantities of trophy which are less than 60000, need to be restocked. 
 What regions do we restock with the trophy brand? */
 SELECT region,
-		brands,
-		quantity
+	brands,
+	quantity
 FROM breweries
 WHERE quantity < 60000 AND brands = 'trophy';
