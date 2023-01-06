@@ -1,4 +1,4 @@
-# **INTERNATIONAL-BREWERIES-SALES-ANALYSIS**
+# **INTERNATIONAL-BREWERIES**
 International breweries is a Nigerian brewery established in 1978 and has over 8 products produced by the company. 
 In the course of this project we hoped to answer a couple of sales related question and the database used in this project is the postgreSQL.
 Data was original stored in a CSV file, so we started by creating tables. Kindly find questions raised in the course of the project.
